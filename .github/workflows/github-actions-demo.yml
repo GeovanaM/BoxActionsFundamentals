@@ -34,6 +34,9 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     needs: Build
     environment: Test
+    env:
+      REPO_SECRET: ${{ secrets.MY_REPO_SECRET }}
+      REPO_VAR: ${{ vars.MY_REPO_VAR }}
     steps:
       - run: echo "🧪 Testing..."
       - name: Use secrets and environment variables
@@ -43,6 +46,8 @@ jobs:
         run: |
           echo "MY_VAR is: $MY_VAR"
           echo "MY_SECRET is: $MY_SECRET"
+          echo "MY_REPO_SECRET is: $REPO_SECRET"
+          echo "MY_REPO_VAR is: $REPO_VAR"
 
           
   Load-Test:
