@@ -37,10 +37,14 @@ jobs:
     steps:
       - run: echo "🧪 Testing..."
       - name: Use secrets and environment variables
+        env:
+          MY_SECRET: ${{ secrets.TEST_SECRET }} # Explicitly passing the secret
+          MY_VAR: ${{ vars.TEST_VAR }}         # Explicitly passing the variable
         run: |
           echo "MY_VAR is: $TEST_VAR"
           echo "MY_SECRET is: $TEST_SECRET"
 
+          
   Load-Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
