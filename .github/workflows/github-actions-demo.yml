@@ -58,6 +58,12 @@ jobs:
       - run: |
           echo "🚀 Step 1..."
           sleep 10
+     
+      - name: Use secrets and environment variables
+        run: |
+          echo "MY_VAR is: $MY_ENV"         
+          echo "MY_SECRET is: $MY_SECRET"
+
       - run: |
           echo "🚀 Step 2..."
           sleep 10
