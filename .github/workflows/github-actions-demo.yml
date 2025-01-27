@@ -50,7 +50,7 @@ jobs:
           echo "MY_SECRET is: $MY_SECRET"
           echo "MY_REPO_SECRET is: $REPO_SECRET"
           echo "MY_REPO_VAR is: $REPO_VAR"
-          Echo "MY WORKFLOW VAR is: $MY_WORKFLOW_VAR
+          Echo "MY WORKFLOW VAR is: $MY_WORKFLOW_VAR"
 
           
   Load-Test:
